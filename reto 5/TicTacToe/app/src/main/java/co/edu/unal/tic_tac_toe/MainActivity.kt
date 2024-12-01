@@ -241,7 +241,6 @@ fun TicTacToeGame() {
                                         playSound(context, R.raw.cpu_move)
                                         updateBoard(board)
 
-
                                         // Verificar si la máquina ganó
                                         val machineWinner = checkWinner()
                                         if (machineWinner != null) {
@@ -265,11 +264,13 @@ fun TicTacToeGame() {
                                                 }
                                             }
                                         }
-                                        // Volver al turno del jugador
-                                        turn = "X"
-                                        statusMessage = "Tu turno" // This method will be executed once the timer is over
-                                    },
-                                    1000 // value in milliseconds
+
+                                        if (turn != "D") {
+                                            // Volver al turno del jugador
+                                            turn = "X"
+                                            statusMessage = "Tu turno"
+                                        }
+                                    }, 1000 // value in milliseconds
                                 )
                             }
                         }
